@@ -25,6 +25,7 @@ public class GrowPlants : MonoBehaviour
         if (canGrowNext != true)
         {
             GrowUp();
+            Debug.Log("J'ai lancé la fonction !");
         }
         else GrowUp2();
     }
@@ -32,10 +33,12 @@ public class GrowPlants : MonoBehaviour
     private void GrowUp()
     {
         premierObjet.transform.DOScale(croissanceAmount, Random.Range(tempsCroissanceMin, tempsCroissanceMax));
+        Debug.Log(premierObjet.transform.lossyScale);
     }
 
     private void GrowUp2() 
     {
+        Debug.Log("Je suis la deuxième animation");
         premierObjet.transform.DOScale(croissanceAmount, Random.Range(tempsCroissanceMin, tempsCroissanceMax)).onComplete += () => deuxiemeObjet.transform.DOScaleY(croissanceAmountDeux, Random.Range(tempsCroissanceDeuxMin, tempsCroissanceDeuxMax)).onComplete += () => deuxiemeObjet.transform.DOScale(1, 5);
     }
 }
