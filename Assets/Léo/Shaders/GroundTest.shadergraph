@@ -4,12 +4,6 @@
     "m_ObjectId": "3fd5bbab49154f8dacd842e562ea27b8",
     "m_Properties": [
         {
-            "m_Id": "cd4cc2db6e1340b4a0a3e1eb9673878b"
-        },
-        {
-            "m_Id": "fab5809a724e4952877004fdf01d3b62"
-        },
-        {
             "m_Id": "2248ff84fcc94ee29dd3bef02bf1db31"
         },
         {
@@ -1145,12 +1139,6 @@
     "m_ObjectId": "37299a5fabc14a7c8b44457e1bc7f183",
     "m_Name": "",
     "m_ChildObjectList": [
-        {
-            "m_Id": "cd4cc2db6e1340b4a0a3e1eb9673878b"
-        },
-        {
-            "m_Id": "fab5809a724e4952877004fdf01d3b62"
-        },
         {
             "m_Id": "965190e56b0e444b954f5bf56435cb62"
         },
@@ -2907,34 +2895,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
-    "m_ObjectId": "cd4cc2db6e1340b4a0a3e1eb9673878b",
-    "m_Guid": {
-        "m_GuidSerialized": "35dd8e21-f256-46c4-939c-0d2d3c9daf2d"
-    },
-    "m_Name": "GroundColor",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "GroundColor",
-    "m_DefaultReferenceName": "_GroundColor",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "x": 0.20000000298023225,
-        "y": 0.20000000298023225,
-        "z": 0.20000000298023225,
-        "w": 0.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "cd82f65ede0a43f6b8a6248a2ebda728",
@@ -3449,34 +3409,6 @@
     },
     "m_Property": {
         "m_Id": "efd538afd0924bf7a735495695653bc8"
-    }
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
-    "m_ObjectId": "fab5809a724e4952877004fdf01d3b62",
-    "m_Guid": {
-        "m_GuidSerialized": "5edbabff-0cc5-4464-a9de-919b1c5bc2dd"
-    },
-    "m_Name": "GrassColor",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "GrassColor",
-    "m_DefaultReferenceName": "_GrassColor",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.800000011920929,
-        "z": 0.20000000298023225,
-        "w": 0.0
     }
 }
 

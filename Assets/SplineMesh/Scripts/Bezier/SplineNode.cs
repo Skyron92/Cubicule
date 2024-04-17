@@ -16,13 +16,13 @@ namespace SplineMesh {
         /// Node position
         /// </summary>
         public Vector3 Position {
-            get { return position; }
+            get => position;
             set {
                 if (position.Equals(value)) return;
                 position.x = value.x;
                 position.y = value.y;
                 position.z = value.z;
-                if(Changed != null) Changed(this, EventArgs.Empty);
+                Changed?.Invoke(this, EventArgs.Empty);
             }
         }
         [SerializeField]

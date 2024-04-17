@@ -1,13 +1,12 @@
 using System.Collections;
-using DG.Tweening;
 using UnityEngine;
 
 public class GroundAnimationProvider : MonoBehaviour
 {
-    [SerializeField] private Renderer renderer;
+    private Renderer renderer;
     private MaterialPropertyBlock materialPropertyBlock;
 
-    [SerializeField, Range(0, 10)] private float transitionFactor;
+    [SerializeField, Range(0, 50)] private float transitionFactor;
     [SerializeField] private float startTime;
     [SerializeField] private float effectDuration;
     [SerializeField] private float deltaInc;
@@ -30,7 +29,7 @@ public class GroundAnimationProvider : MonoBehaviour
         enabled = true;
         while (enabled) {
             transitionFactor += deltaInc;
-            transitionFactor = Mathf.Clamp(transitionFactor, -10, 10);
+            transitionFactor = Mathf.Clamp(transitionFactor, 0, 50);
             renderer.GetPropertyBlock(materialPropertyBlock);
             materialPropertyBlock.SetFloat("_transitionFactor", transitionFactor);
             renderer.SetPropertyBlock(materialPropertyBlock);
