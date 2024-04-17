@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: "Assets/L\xE9o/Scenes/L\xE9oTest.unity"
     guid: fd379097140c88b4e918885f30d11a35
+  - enabled: 1
+    path: Assets/Claire/Scene_Claire.unity
+    guid: 6c1d50b59382ada448902b456402e89b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3ce6296e38f42a54b803b356814b16d0,
       type: 2}
