@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SphereCollision
   - Ground
+  - CitySound
   layers:
   - Default
   - TransparentFX
