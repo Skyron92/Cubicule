@@ -185,7 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMaterial: {fileID: 2100000, guid: 24afc2d286bacd641814ee6dc8aa2e4b, type: 2}
   effectDuration: 10
-  deltaInc: 0.02
+  deltaInc: 0.01
+  deltaFresnelInc: 0.01
 --- !u!135 &5558191
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 5558188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70.7, y: 2, z: -35.3}
+  m_LocalPosition: {x: -67.36, y: 2, z: -43.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -887,11 +888,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1345016388326322971, guid: 58aec062cb94c254fa01f55687ae6a23,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 705795bc1ab7fc348a2d70da5223f89d, type: 2}
     - target: {fileID: 1345016388326322971, guid: 58aec062cb94c254fa01f55687ae6a23,
         type: 3}
       propertyPath: m_Materials.Array.data[1]

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3307573318848157713}
   - component: {fileID: 1182342258354377062}
   - component: {fileID: 748445477107117862}
+  - component: {fileID: 1345113319539026146}
   m_Layer: 0
   m_Name: BallonFlot
   m_TagString: Untagged
@@ -140,9 +141,25 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.011
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0.002, z: 0}
+--- !u!114 &1345113319539026146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445601126459450895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfc6c5fbe53dc84093004fccc6cf1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMaterial: {fileID: 2100000, guid: 24afc2d286bacd641814ee6dc8aa2e4b, type: 2}
+  effectDuration: 10
+  deltaInc: 0.02
+  deltaFresnelInc: 0.01
