@@ -7,6 +7,8 @@ TagManager:
   - SphereCollision
   - Ground
   - CitySound
+  - FlyCheck
+  - FlyAnimal
   layers:
   - Default
   - TransparentFX
