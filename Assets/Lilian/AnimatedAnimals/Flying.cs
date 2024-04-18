@@ -10,7 +10,7 @@ public class Flying : MonoBehaviour
          // Start is called before the first frame update
     void Start()
     {
-        Animal = GameObject.FindGameObjectWithTag<FlyAnimal>();
+        Animal = FindObjectOfType<Flying>();
     }
 
     // Update is called once per frame
