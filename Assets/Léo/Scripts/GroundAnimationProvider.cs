@@ -7,11 +7,11 @@ public class GroundAnimationProvider : MonoBehaviour
     private MaterialPropertyBlock materialPropertyBlock;
 
     [SerializeField, Range(0, 50)] private float transitionFactor;
-    [SerializeField] private float startTime;
+    private float startTime;
     [SerializeField] private float effectDuration;
     [SerializeField] private float deltaInc;
     private bool hasStarted;
-    [SerializeField] private bool enabled;
+    private bool enabled;
     
     private void Awake() {
         renderer = GetComponent<Renderer>();
@@ -22,6 +22,9 @@ public class GroundAnimationProvider : MonoBehaviour
 
     private void Update() {
         if(hasStarted) StartCoroutine(LaunchTransition());
+#if UNITY_EDITOR
+        if (Input.GetButton("Jump")) StartCoroutine(LaunchTransition());
+#endif
     }
 
     private IEnumerator LaunchTransition() {
@@ -33,7 +36,6 @@ public class GroundAnimationProvider : MonoBehaviour
             renderer.GetPropertyBlock(materialPropertyBlock);
             materialPropertyBlock.SetFloat("_transitionFactor", transitionFactor);
             renderer.SetPropertyBlock(materialPropertyBlock);
-            Debug.Log(transitionFactor);
             if (startTime - Time.time < effectDuration) enabled = false;
             yield return new WaitForSeconds(0.1f);
         }
