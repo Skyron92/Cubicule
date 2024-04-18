@@ -127,9 +127,9 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _WaveHeight: 1
+    - _WaveHeight: 1.5
     - _WaveSpeed: 0.5
-    - _WaveStrenght: 1
+    - _WaveStrenght: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
