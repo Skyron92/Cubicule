@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6940886498655764321}
-  iaRef: {fileID: -7621925406209348655, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  iaRef: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!95 &780835941100696392
 Animator:
   serializedVersion: 5
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1784677469251869215}
-  iaRef: {fileID: -8148491892877670638, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  iaRef: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!95 &4355026679991716008
 Animator:
   serializedVersion: 5
