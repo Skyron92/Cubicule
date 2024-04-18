@@ -8416,7 +8416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionFactor: 0
   effectDuration: 5
-  deltaInc: 0.03
+  deltaInc: 0.01
 --- !u!1 &1469151481
 GameObject:
   m_ObjectHideFlags: 0
