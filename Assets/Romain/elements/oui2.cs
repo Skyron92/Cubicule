@@ -1,5 +1,5 @@
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 
 public class oui2 : MonoBehaviour
 {
@@ -12,6 +12,8 @@ public class oui2 : MonoBehaviour
     Tween shakePositionTween;
     Tween shakeRotationTween;
     Tween moveTween;
+    public string DeathWish;
+    public DeathColor DeathColor;
 
     void Start()
     {
@@ -19,7 +21,6 @@ public class oui2 : MonoBehaviour
         cubeMaterial = cubeRenderer.material;
 
         centerOfMap = CalculateCenterOfMap();
-        Debug.Log("start");
         StartAnimations();
     }
 
@@ -28,7 +29,7 @@ public class oui2 : MonoBehaviour
         // Tableau des codes hexadécimaux des couleurs possibles
         string[] hexColors = new string[]
         {
-        "#FF602D", 
+        "#FF602D",
         "#FFA62D",
         "#FFDA2D",
         "#F3FF2D",
@@ -47,6 +48,7 @@ public class oui2 : MonoBehaviour
 
         // Animation de changement de couleur du cube avec la couleur aléatoire
         colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 30f);
+        DeathWish = randomHexColor;
 
         // Le reste de tes animations reste inchangé
         shakePositionTween = transform.DOShakePosition(30f, 1f, 15);
@@ -55,8 +57,7 @@ public class oui2 : MonoBehaviour
         float randomMoveDuration = Random.Range(20f, 40f);
 
         // Animation de déplacement du cube vers le centre de la carte avec la durée aléatoire
-        moveTween = transform.DOMove(centerOfMap, randomMoveDuration)
-                .OnComplete(CheckPosition);
+        moveTween = transform.DOMove(centerOfMap, randomMoveDuration);
     }
 
     Vector3 CalculateCenterOfMap()
@@ -78,11 +79,6 @@ public class oui2 : MonoBehaviour
         return color;
     }
 
-    void CheckPosition()
-    {
-        Debug.Log("Les cubes sont arrivés au centre de la carte !");
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -98,6 +94,20 @@ public class oui2 : MonoBehaviour
                 Invoke("StopAnimations", randomDelay);
             }
         }
+        if (other.CompareTag("Monolithe"))
+        {
+            // Récupère le script DeathColor du monolithe
+            DeathColor monolitheDeathColor = other.GetComponent<DeathColor>();
+            if (monolitheDeathColor != null)
+            {
+                Debug.Log(monolitheDeathColor);
+                // Passe la référence à ce script oui2 au monolithe
+                monolitheDeathColor.ballonScript = this;
+            }
+
+            Invoke("Dela1", 0.5f);
+        }
+            
     }
 
     void StopAnimations()
@@ -115,7 +125,12 @@ public class oui2 : MonoBehaviour
         {
             rb.useGravity = true;
         }
+    }
 
-        Debug.Log("Animations stopped.");
+    void Dela1()
+    {
+
+        DeathColor.AutomnColor();
+        Destroy(gameObject);
     }
 }

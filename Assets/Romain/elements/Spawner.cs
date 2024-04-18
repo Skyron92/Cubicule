@@ -24,7 +24,6 @@ public class CubeSpawner : MonoBehaviour
 
     void SpawnCubeRandomPosition()
     {
-        Debug.Log("oui");
         // Générer une position aléatoire sur la carte
         Vector3 randomPosition = GenerateRandomPosition();
 
