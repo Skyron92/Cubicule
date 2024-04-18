@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 748445477107117862}
   - component: {fileID: 2706275302710218641}
   - component: {fileID: -1492195693605625195}
+  - component: {fileID: 1097324406618789447}
   m_Layer: 0
   m_Name: BallonFlot
   m_TagString: Untagged
@@ -405,3 +406,19 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1097324406618789447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445601126459450895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfc6c5fbe53dc84093004fccc6cf1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMaterial: {fileID: 2100000, guid: 24afc2d286bacd641814ee6dc8aa2e4b, type: 2}
+  effectDuration: 10
+  deltaInc: 0.02
+  deltaFresnelInc: 0.01
