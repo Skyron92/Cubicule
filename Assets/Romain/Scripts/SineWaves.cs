@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System;
 
 [CreateAssetMenu(fileName = "Data", menuName = "Custom/Sine Waves", order = 1)]
 public class SineWaves : ScriptableObject
 {
-    [Serializable]
+    [System.Serializable]
     public struct SineWave
     {
         public float amplitude;
@@ -22,10 +21,10 @@ public class SineWaves : ScriptableObject
     [SerializeField]
     private SineWave[] _wavesInfo;
 
-    [SerializeField, InspectorButton("AssignRandomDirections")]
+    [SerializeField, UnityEngine.Serialization.FormerlySerializedAs("_assignRandomDirections")]
     private bool _assignRandomDirections;
 
-    public SineWave this [int index]
+    public SineWave this[int index]
     {
         get { return _wavesInfo[index]; }
     }
@@ -47,14 +46,14 @@ public class SineWaves : ScriptableObject
 
         if (_wavesInfo.Length != _waves)
         {
-            Array.Resize(ref _wavesInfo, _waves);
+            System.Array.Resize(ref _wavesInfo, _waves);
         }
     }
 
     void AssignRandomDirections()
     {
         for (int i = 0; i < _wavesInfo.Length; i++)
-        {  
+        {
             _wavesInfo[i].travelAngle = UnityEngine.Random.Range(0, 360);
         }
     }
