@@ -14,7 +14,6 @@ public class GradientSkyBox : MonoBehaviour
     private void Start()
     {
         RenderSettings.skybox.SetColor("_Tint", couleurDebut);
-        StartCoroutine(WaitForColorChange());
     }
 
     void Update()
