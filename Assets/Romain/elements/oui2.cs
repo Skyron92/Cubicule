@@ -19,7 +19,7 @@ public class oui2 : MonoBehaviour
         cubeMaterial = cubeRenderer.material;
 
         centerOfMap = CalculateCenterOfMap();
-
+        Debug.Log("start");
         StartAnimations();
     }
 
@@ -49,11 +49,14 @@ public class oui2 : MonoBehaviour
         colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 30f);
 
         // Le reste de tes animations reste inchangé
-        shakePositionTween = transform.DOShakePosition(30f, 0.5f, 10);
-        shakeRotationTween = transform.DOShakeRotation(30f, 10f, 10);
+        shakePositionTween = transform.DOShakePosition(30f, 1f, 15);
+        shakeRotationTween = transform.DOShakeRotation(30f, 15f, 15);
 
-        moveTween = transform.DOMove(centerOfMap, 30f)
-            .OnComplete(CheckPosition);
+        float randomMoveDuration = Random.Range(20f, 40f);
+
+        // Animation de déplacement du cube vers le centre de la carte avec la durée aléatoire
+        moveTween = transform.DOMove(centerOfMap, randomMoveDuration)
+                .OnComplete(CheckPosition);
     }
 
     Vector3 CalculateCenterOfMap()
@@ -84,14 +87,14 @@ public class oui2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         if (other.CompareTag("SphereCollision"))
         {
             if (!isCollided)
             {
                 isCollided = true;
-                float randomDelay = Random.Range(2.5f, 8.5f);
+                float randomDelay = Random.Range(4.5f, 10f);
                 Invoke("StopAnimations", randomDelay);
             }
         }
