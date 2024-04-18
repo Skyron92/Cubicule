@@ -25,12 +25,30 @@ public class oui2 : MonoBehaviour
 
     void StartAnimations()
     {
-        emissionTween = DOTween.To(() => cubeMaterial.GetColor("_EmissionColor"), color => cubeMaterial.SetColor("_EmissionColor", color), HexToColor("#F08315"), 30f)
+        // Tableau des codes hexadécimaux des couleurs possibles
+        string[] hexColors = new string[]
+        {
+        "#FF602D", 
+        "#FFA62D",
+        "#FFDA2D",
+        "#F3FF2D",
+        "#800000",
+        "#ff7f00",
+        "#960018"
+        };
+
+        // Choisir aléatoirement un code hexadécimal parmi le tableau
+        string randomHexColor = hexColors[Random.Range(0, hexColors.Length)];
+
+        // Animation de clignotement de l'émission avec la couleur aléatoire
+        emissionTween = DOTween.To(() => cubeMaterial.GetColor("_EmissionColor"), color => cubeMaterial.SetColor("_EmissionColor", color), HexToColor(randomHexColor), 30f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
 
-        colorTween = cubeRenderer.material.DOColor(HexToColor("#F08315"), 30f);
+        // Animation de changement de couleur du cube avec la couleur aléatoire
+        colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 30f);
 
+        // Le reste de tes animations reste inchangé
         shakePositionTween = transform.DOShakePosition(30f, 0.5f, 10);
         shakeRotationTween = transform.DOShakeRotation(30f, 10f, 10);
 
@@ -73,7 +91,7 @@ public class oui2 : MonoBehaviour
             if (!isCollided)
             {
                 isCollided = true;
-                float randomDelay = Random.Range(2f, 6f);
+                float randomDelay = Random.Range(2.5f, 8.5f);
                 Invoke("StopAnimations", randomDelay);
             }
         }
