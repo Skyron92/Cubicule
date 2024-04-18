@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flyinh : MonoBehaviour
+public class Flying : MonoBehaviour
+   
 {
-    // Start is called before the first frame update
+    public GameObject Animal;
+    public GameObject[] FlyCheck;
+         // Start is called before the first frame update
     void Start()
     {
-        
+        Animal = GameObject.FindGameObjectWithTag<FlyAnimal>();
     }
 
     // Update is called once per frame
