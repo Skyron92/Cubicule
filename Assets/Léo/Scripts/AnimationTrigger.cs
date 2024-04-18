@@ -1,6 +1,4 @@
-using System.Collections;
 using Unity.XR.CoreUtils;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
