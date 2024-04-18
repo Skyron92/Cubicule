@@ -47,6 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ContactSpread: 0
+    - _FillSpeed: 3
     - _FresnelSpeed: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
