@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a6b8fe0943e634cadfcb74f6f5fbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubePrefab: {fileID: 6838876898358898579}
 --- !u!65 &2362685641068381613
 BoxCollider:
   m_ObjectHideFlags: 0
