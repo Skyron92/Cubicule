@@ -7,11 +7,11 @@ public class GroundAnimationProvider : MonoBehaviour
     private MaterialPropertyBlock materialPropertyBlock;
 
     [SerializeField, Range(0, 50)] private float transitionFactor;
-    [SerializeField] private float startTime;
+    private float startTime;
     [SerializeField] private float effectDuration;
     [SerializeField] private float deltaInc;
     private bool hasStarted;
-    [SerializeField] private bool enabled;
+    private bool enabled;
     
     private void Awake() {
         renderer = GetComponent<Renderer>();
