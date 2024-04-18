@@ -64,12 +64,16 @@ public class oui2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            //Destroy(gameObject);
+        }
         if (other.CompareTag("SphereCollision"))
         {
             if (!isCollided)
             {
                 isCollided = true;
-                float randomDelay = Random.Range(0.5f, 1.5f);
+                float randomDelay = Random.Range(2f, 6f);
                 Invoke("StopAnimations", randomDelay);
             }
         }
@@ -83,6 +87,13 @@ public class oui2 : MonoBehaviour
         shakePositionTween.Kill();
         shakeRotationTween.Kill();
         moveTween.Kill();
+
+        // Active la gravité pour que le cube tombe
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = true;
+        }
 
         Debug.Log("Animations stopped.");
     }
