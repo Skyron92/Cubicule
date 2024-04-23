@@ -29,6 +29,7 @@ public class AnimationTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(!CollideByBottom(other)) return;
+        Debug.Log("colide");
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit = new RaycastHit();
         if (!Physics.Raycast(ray, out hit)) return;
@@ -47,6 +48,7 @@ public class AnimationTrigger : MonoBehaviour
     
     private void LaunchTransition() {
         if(meshRenderer == null) return;
+        Debug.Log("trans");
         startTime = Time.time;
         transitionFactor += deltaInc;
         transitionFactor = Mathf.Clamp(transitionFactor, 0, 50);
