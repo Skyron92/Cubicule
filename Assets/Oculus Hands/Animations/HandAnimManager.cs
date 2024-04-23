@@ -1,30 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class HandAnimManager : MonoBehaviour
 {
     public Animator animator;
-    [SerializeField] private InputActionReference iaRef;
-    private static readonly int Grip = Animator.StringToHash("Grip");
+    [SerializeField] private InputActionReference iarGrabRef;
+    [SerializeField] private InputActionReference iarTriggerRef;
+    private static readonly int GripParameter = Animator.StringToHash("Grip");
+    private static readonly int TriggerParameter = Animator.StringToHash("Trigger");
 
-    private InputAction HandInputAction => iaRef.action;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        HandInputAction.Enable();
-        HandInputAction.started += context => animator.SetFloat(Grip, 1); 
-        HandInputAction.canceled += context => animator.SetFloat(Grip, 0);
+    private InputAction GrabInputAction => iarGrabRef.action;
+    private InputAction TriggerInputAction => iarTriggerRef.action;
+    
+    void Awake() {
+        GrabInputAction.Enable();
+        GrabInputAction.started += context => animator.SetFloat(GripParameter, 1); 
+        GrabInputAction.canceled += context => animator.SetFloat(GripParameter, 0);
+        TriggerInputAction.Enable();
+        TriggerInputAction.started += context => animator.SetFloat(TriggerParameter, 1);
+        TriggerInputAction.canceled += context => animator.SetFloat(TriggerParameter, 0);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
-
-internal class SerializedAttribute : Attribute
-{
 }
