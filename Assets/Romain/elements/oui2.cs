@@ -14,7 +14,12 @@ public class oui2 : MonoBehaviour
     Tween moveTween;
     public string DeathWish;
     public DeathColor DeathColor;
+    private DeathColor deathColorInstance;
 
+    public void SetDeathColorInstance(DeathColor deathColor)
+    {
+        deathColorInstance = deathColor;
+    }
     void Start()
     {
         cubeRenderer = GetComponent<Renderer>();
@@ -100,14 +105,16 @@ public class oui2 : MonoBehaviour
             DeathColor monolitheDeathColor = other.GetComponent<DeathColor>();
             if (monolitheDeathColor != null)
             {
-                Debug.Log(monolitheDeathColor);
                 // Passe la référence à ce script oui2 au monolithe
                 monolitheDeathColor.ballonScript = this;
+
+                // Assigne la référence à l'instance de DeathColor dans oui2
+                SetDeathColorInstance(monolitheDeathColor);
             }
 
             Invoke("Dela1", 0.5f);
         }
-            
+
     }
 
     void StopAnimations()
@@ -124,13 +131,22 @@ public class oui2 : MonoBehaviour
         if (rb != null)
         {
             rb.useGravity = true;
+            Invoke("Dela2", 3f);
         }
     }
 
     void Dela1()
     {
-
-        DeathColor.AutomnColor();
+        if (deathColorInstance != null)
+        {
+            // Appeler la méthode AutomnColor de l'instance de DeathColor
+            deathColorInstance.AutomnColor();
+        }
         Destroy(gameObject);
     }
+    void Dela2()
+    {
+        Destroy(gameObject);
+    }
+
 }
