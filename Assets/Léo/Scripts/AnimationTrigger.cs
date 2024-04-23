@@ -1,16 +1,17 @@
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(SphereCollider))]
 public class AnimationTrigger : MonoBehaviour
 {
     [SerializeField] private Material groundMaterial;
     [Range(0, 50)] private float transitionFactor;
-    [Range(-.13f, 0)] private float fresnelImitation;
+    [Range(0, 20)] private float areaSize;
     private float startTime;
     [SerializeField] private float effectDuration;
     [SerializeField] private float deltaInc; 
-    [SerializeField] private float deltaFresnelInc;
+    [SerializeField] private float deltaSizeInc;
     private Vector2 _position;
     private bool _hasStarted;
     private MeshRenderer meshRenderer;
@@ -28,6 +29,7 @@ public class AnimationTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(!CollideByBottom(other)) return;
+        Debug.Log("colide");
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit = new RaycastHit();
         if (!Physics.Raycast(ray, out hit)) return;
@@ -35,7 +37,7 @@ public class AnimationTrigger : MonoBehaviour
         meshRenderer = other.gameObject.GetComponent<MeshRenderer>();
         meshRenderer.AddMaterial(new Material(groundMaterial));
         _materialIndex = meshRenderer.materials.Length - 1;
-        fresnelImitation = -.12f;
+        areaSize = 0;
         transitionFactor = 0;
         _hasStarted = true;
     }
@@ -46,14 +48,16 @@ public class AnimationTrigger : MonoBehaviour
     
     private void LaunchTransition() {
         if(meshRenderer == null) return;
+        Debug.Log("trans");
         startTime = Time.time;
         transitionFactor += deltaInc;
         transitionFactor = Mathf.Clamp(transitionFactor, 0, 50);
-        fresnelImitation += deltaFresnelInc;
-        fresnelImitation = Mathf.Clamp(fresnelImitation, -.12f, 0);
+        areaSize += deltaSizeInc;
+        areaSize = Mathf.Clamp(areaSize, 0, 20);
         meshRenderer.GetPropertyBlock(materialPropertyBlock, _materialIndex);
         materialPropertyBlock.SetFloat("_transitionFactor", transitionFactor);
-        materialPropertyBlock.SetVector("_Position", new Vector3(UVToPos(_position.x),fresnelImitation, UVToPos(_position.y)));
+        materialPropertyBlock.SetFloat("_AreaSize", areaSize);
+        materialPropertyBlock.SetVector("_Position", new Vector3(UVToPos(_position.x),0, UVToPos(_position.y)));
         meshRenderer.SetPropertyBlock(materialPropertyBlock, _materialIndex);
         if (startTime - Time.time > effectDuration) enabled = true;
     }

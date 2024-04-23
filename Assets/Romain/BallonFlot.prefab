@@ -104,6 +104,8 @@ MonoBehaviour:
   DeathWish: 
   DeathColor: {fileID: 6386318058094702471, guid: 3304f5d9d16a6784981caf2c7522c60a,
     type: 3}
+  particleEffectPrefab: {fileID: 8713021402157549258, guid: bc7868420e1d7614c853f5f5095f45fd,
+    type: 3}
 --- !u!54 &1182342258354377062
 Rigidbody:
   m_ObjectHideFlags: 0

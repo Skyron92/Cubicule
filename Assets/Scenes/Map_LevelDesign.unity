@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019235555, g: 0.018663801, b: 0.01804623, a: 1}
+  m_IndirectSpecularColor: {r: 0.019247083, g: 0.018670019, b: 0.018065082, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7370,7 +7370,7 @@ Transform:
   m_GameObject: {fileID: 674707316}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95999044, y: -4.5893664, z: 6.334261}
+  m_LocalPosition: {x: 0.95999044, y: -4.5893664, z: 7.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18074,7 +18074,7 @@ Transform:
   - {fileID: 1430653232}
   - {fileID: 1830876279}
   - {fileID: 259860279}
-  m_Father: {fileID: 2049081125}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1498169806
 PrefabInstance:
@@ -24837,7 +24837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049081125}
   m_Layer: 0
-  m_Name: Arbres
+  m_Name: Misc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24874,7 +24874,6 @@ Transform:
   - {fileID: 913701566}
   - {fileID: 910370246}
   - {fileID: 618670020}
-  - {fileID: 1492859674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2054634960 stripped
@@ -25873,6 +25872,7 @@ SceneRoots:
   - {fileID: 1466695346}
   - {fileID: 556184361}
   - {fileID: 2072957743}
+  - {fileID: 1492859674}
   - {fileID: 2049081125}
   - {fileID: 781834543}
   - {fileID: 529372170}
