@@ -5,6 +5,8 @@ public class oui2 : MonoBehaviour
 {
     Renderer cubeRenderer;
     Material cubeMaterial;
+    Material particleMaterial;
+    ParticleSystem ParticleSystem;
     Vector3 centerOfMap;
     bool isCollided = false;
     Tween emissionTween;
@@ -23,8 +25,10 @@ public class oui2 : MonoBehaviour
     }
     void Start()
     {
+        ParticleSystem = GetComponent<ParticleSystem>();
         cubeRenderer = GetComponent<Renderer>();
         cubeMaterial = cubeRenderer.material;
+        particleMaterial = ParticleSystem.material;
 
         centerOfMap = CalculateCenterOfMap();
         StartAnimations();
@@ -138,6 +142,7 @@ public class oui2 : MonoBehaviour
             if (particleEffectPrefab != null)
             {
                 Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+                colorTween = particleEffectPrefab.material.DOColor(HexToColor(DeathWish), 30f);
             }
         }
     }
