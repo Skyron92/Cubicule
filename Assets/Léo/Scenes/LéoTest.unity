@@ -742,6 +742,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: --------XR Player------------
       objectReference: {fileID: 0}
+    - target: {fileID: 1643084735597669130, guid: 95adc61d34292d748ab98d84fa81beeb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643084735597669130, guid: 95adc61d34292d748ab98d84fa81beeb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643084735597669130, guid: 95adc61d34292d748ab98d84fa81beeb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 1707157381493524990, guid: 95adc61d34292d748ab98d84fa81beeb,
         type: 3}
       propertyPath: m_Enabled
