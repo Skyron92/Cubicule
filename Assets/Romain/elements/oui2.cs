@@ -15,6 +15,7 @@ public class oui2 : MonoBehaviour
     public string DeathWish;
     public DeathColor DeathColor;
     private DeathColor deathColorInstance;
+    public GameObject particleEffectPrefab;
 
     public void SetDeathColorInstance(DeathColor deathColor)
     {
@@ -131,22 +132,24 @@ public class oui2 : MonoBehaviour
         if (rb != null)
         {
             rb.useGravity = true;
-            Invoke("Dela2", 3f);
+
+            Destroy(gameObject, 3.5f);
+            // Instancier le prefab d'effet de particules au même emplacement que le ballon
+            if (particleEffectPrefab != null)
+            {
+                Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 
     void Dela1()
     {
-        if (deathColorInstance != null)
+         if (deathColorInstance != null)
         {
             // Appeler la méthode AutomnColor de l'instance de DeathColor
             deathColorInstance.AutomnColor();
         }
-        Destroy(gameObject);
-    }
-    void Dela2()
-    {
-        Destroy(gameObject);
-    }
 
+        Destroy(gameObject);
+    }
 }

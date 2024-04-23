@@ -9,6 +9,8 @@ TagManager:
   - CitySound
   - FlyCheck
   - FlyAnimal
+  - Monolithe
+  - Baton
   layers:
   - Default
   - TransparentFX
