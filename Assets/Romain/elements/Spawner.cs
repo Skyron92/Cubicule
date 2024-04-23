@@ -16,7 +16,7 @@ public class CubeSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f); // Attendre 5 secondes
+            yield return new WaitForSeconds(1f); // Attendre 5 secondes
 
             SpawnCubeRandomPosition();
         }
@@ -38,7 +38,7 @@ public class CubeSpawner : MonoBehaviour
         float randomZ = Random.Range(-mapSize.z / 2f, mapSize.z / 2f);
 
         // La hauteur Y peut être ajustée selon tes besoins
-        float randomY = Random.Range(4f, 15);
+        float randomY = Random.Range(4f, 10);
 
         // Retourner les coordonnées aléatoires dans un Vector3
         return new Vector3(randomX, randomY, randomZ);
