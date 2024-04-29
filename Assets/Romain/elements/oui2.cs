@@ -25,11 +25,6 @@ public class oui2 : MonoBehaviour
     }
     void Start()
     {
-        ParticleSystem = GetComponent<ParticleSystem>();
-        cubeRenderer = GetComponent<Renderer>();
-        cubeMaterial = cubeRenderer.material;
-        particleMaterial = ParticleSystem.material;
-
         centerOfMap = CalculateCenterOfMap();
         StartAnimations();
     }
@@ -138,12 +133,6 @@ public class oui2 : MonoBehaviour
             rb.useGravity = true;
 
             Destroy(gameObject, 3.5f);
-            // Instancier le prefab d'effet de particules au même emplacement que le ballon
-            if (particleEffectPrefab != null)
-            {
-                Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
-                colorTween = particleEffectPrefab.material.DOColor(HexToColor(DeathWish), 30f);
-            }
         }
     }
 
