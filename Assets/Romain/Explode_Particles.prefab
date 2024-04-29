@@ -4861,10 +4861,10 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.3
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 2
+  m_LengthScale: 1
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -4902,7 +4902,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 0b1b2e6682799b34eb1ee3f381ca6304, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.204
+  m_Volume: 0.036
   m_Pitch: 1
   Loop: 0
   Mute: 0

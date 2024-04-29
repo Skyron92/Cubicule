@@ -48,7 +48,6 @@ public class AnimationTrigger : MonoBehaviour
     
     private void LaunchTransition() {
         if(meshRenderer == null) return;
-        Debug.Log("trans");
         startTime = Time.time;
         transitionFactor += deltaInc;
         transitionFactor = Mathf.Clamp(transitionFactor, 0, 50);

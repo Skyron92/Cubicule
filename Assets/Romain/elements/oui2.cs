@@ -136,12 +136,8 @@ public class oui2 : MonoBehaviour
         {
             rb.useGravity = true;
 
+            Invoke("Dela2", 3.49f);
             Destroy(gameObject, 3.5f);
-            // Instancier le prefab d'effet de particules au même emplacement que le ballon
-            if (particleEffectPrefab != null)
-            {
-                Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
-            }
         }
     }
 
@@ -154,5 +150,31 @@ public class oui2 : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void Dela2()
+    {
+        if (particleEffectPrefab != null)
+        {
+            // Instancier l'effet de particule
+            GameObject particleEffectInstance = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+
+            // Vérifier si l'effet de particule a été instancié
+            if (particleEffectInstance != null)
+            {
+                // Récupérer le renderer de l'effet de particule
+                Renderer particleRenderer = particleEffectInstance.GetComponent<Renderer>();
+
+                // Vérifier si l'effet de particule a un renderer
+                if (particleRenderer != null)
+                {
+                    // Convertir le code hexadécimal en couleur utilisable
+                    Color hexColor = HexToColor(DeathWish);
+
+                    // Appliquer la couleur à la propriété appropriée du matériau de l'effet de particule
+                    particleRenderer.material.SetColor("_BaseColor", hexColor);
+                }
+            }
+        }
     }
 }
