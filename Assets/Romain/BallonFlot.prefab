@@ -422,5 +422,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMaterial: {fileID: 2100000, guid: 24afc2d286bacd641814ee6dc8aa2e4b, type: 2}
   effectDuration: 10
-  deltaInc: 0.02
-  deltaFresnelInc: 0.01
+  deltaInc: 0.01
+  deltaSizeInc: 0.1

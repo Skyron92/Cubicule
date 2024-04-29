@@ -28,8 +28,7 @@ public class AnimationTrigger : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(!CollideByBottom(other)) return;
-        Debug.Log("colide");
+        if(!CollideByBottom(other) && !other.gameObject.CompareTag("Ground") ) return;
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit = new RaycastHit();
         if (!Physics.Raycast(ray, out hit)) return;
