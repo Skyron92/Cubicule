@@ -134,7 +134,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.01
-  m_Center: {x: 0, y: 0.002, z: 0}
+  m_Center: {x: 0, y: -0.002, z: 0}
 --- !u!114 &2547109484263636730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMaterial: {fileID: 2100000, guid: 24afc2d286bacd641814ee6dc8aa2e4b, type: 2}
   effectDuration: 20
-  deltaInc: 0.005
-  deltaSizeInc: 0.001
+  deltaInc: 0.01
+  deltaSizeInc: 0.01
   eventManager: {fileID: 0}
 --- !u!114 &5763240171466920882
 MonoBehaviour:
