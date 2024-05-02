@@ -16,8 +16,13 @@ public class DeathColor : MonoBehaviour
 
     void Start()
     {
-        // Récupère le composant Collider attaché à cet objet
-        objectCollider = GetComponent<Collider>();
+        // Récupère le composant Renderer attaché à cet objet
+        cubeRenderer = GetComponent<Renderer>();
+        // Récupère le composant Material du Renderer
+        cubeMaterial = cubeRenderer.sharedMaterial;
+
+        // Définit la couleur du matériau en gris
+        cubeMaterial.color = Color.gray;
     }
     public void AutomnColor()
     {
@@ -28,8 +33,16 @@ public class DeathColor : MonoBehaviour
         Debug.Log(ballonScript.DeathWish);
         // Utilise la référence au script oui2 pour récupérer la couleur du ballon
         colorTween = cubeRenderer.sharedMaterial.DOColor(HexToColor(ballonScript.DeathWish), 4f);
+
+        // Lancer le script SpawnAnimaux après un délai de 4 secondes
+        Invoke("SpawnAnimalsAfterDelay", 0.5f);
     }
 
+    void SpawnAnimalsAfterDelay()
+    {
+        // Trouve le composant SpawnAnimaux et appelle sa méthode Start pour lancer le spawn des animaux
+        FindObjectOfType<SpawnAnimaux>().Start();
+    }
     Color HexToColor(string hex)
     {
         Color color = new Color();

@@ -38,7 +38,7 @@ public class CubeSpawner : MonoBehaviour
         float randomZ = Random.Range(-mapSize.z / 2f, mapSize.z / 2f);
 
         // La hauteur Y peut être ajustée selon tes besoins
-        float randomY = Random.Range(4f, 10);
+        float randomY = Random.Range(5f, 10);
 
         // Retourner les coordonnées aléatoires dans un Vector3
         return new Vector3(randomX, randomY, randomZ);

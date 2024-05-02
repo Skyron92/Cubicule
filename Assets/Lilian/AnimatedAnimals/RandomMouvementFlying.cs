@@ -7,9 +7,11 @@ public class RandomNavMeshMovement : MonoBehaviour
 {
     public Vector3 zoneCenter; // Center of the NavMesh area
     public float zoneRadius;   // Radius of the NavMesh area
+    private Vector3 zoneCalcul;
 
     private NavMeshAgent agent;
     private Vector3 randomDestination;
+    bool hasReachedDestination => Vector3.Distance(transform.position, randomDestination) < 0.1f;
 
     void Start()
     {
@@ -39,11 +41,17 @@ public class RandomNavMeshMovement : MonoBehaviour
         }
     }
 
+    // Update zoneCalcul
+    void UpdateZoneCalcul()
+    {
+        zoneCalcul = new Vector3(zoneCenter.x, zoneCenter.y - 1f, zoneCenter.z);
+    }
+
     // Optionally, you can visualize the NavMesh area in the editor for easier setup
     void OnDrawGizmosSelected()
     {
+        UpdateZoneCalcul();
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(zoneCenter, zoneRadius);
     }
 }
-
