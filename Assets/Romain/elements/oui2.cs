@@ -18,6 +18,7 @@ public class oui2 : MonoBehaviour
     public DeathColor DeathColor;
     private DeathColor deathColorInstance;
     public GameObject particleEffectPrefab;
+    private bool _isGrab;
 
     public void SetDeathColorInstance(DeathColor deathColor)
     {
@@ -35,7 +36,7 @@ public class oui2 : MonoBehaviour
 
     void StartAnimations()
     {
-        // Tableau des codes hexadécimaux des couleurs possibles
+        // Tableau des codes hexadï¿½cimaux des couleurs possibles
         string[] hexColors = new string[]
         {
         "#FF602D",
@@ -47,25 +48,25 @@ public class oui2 : MonoBehaviour
         "#960018"
         };
 
-        // Choisir aléatoirement un code hexadécimal parmi le tableau
+        // Choisir alï¿½atoirement un code hexadï¿½cimal parmi le tableau
         string randomHexColor = hexColors[Random.Range(0, hexColors.Length)];
 
-        // Animation de clignotement de l'émission avec la couleur aléatoire
+        // Animation de clignotement de l'ï¿½mission avec la couleur alï¿½atoire
         emissionTween = DOTween.To(() => cubeMaterial.GetColor("_EmissionColor"), color => cubeMaterial.SetColor("_EmissionColor", color), HexToColor(randomHexColor), 30f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
 
-        // Animation de changement de couleur du cube avec la couleur aléatoire
+        // Animation de changement de couleur du cube avec la couleur alï¿½atoire
         colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 30f);
         DeathWish = randomHexColor;
 
-        // Le reste de tes animations reste inchangé
+        // Le reste de tes animations reste inchangï¿½
         shakePositionTween = transform.DOShakePosition(30f, 1f, 15);
         shakeRotationTween = transform.DOShakeRotation(30f, 15f, 15);
 
         float randomMoveDuration = Random.Range(20f, 40f);
 
-        // Animation de déplacement du cube vers le centre de la carte avec la durée aléatoire
+        // Animation de dï¿½placement du cube vers le centre de la carte avec la durï¿½e alï¿½atoire
         moveTween = transform.DOMove(centerOfMap, randomMoveDuration);
     }
 
@@ -98,6 +99,7 @@ public class oui2 : MonoBehaviour
         {
             if (!isCollided)
             {
+                if(_isGrab) return;
                 isCollided = true;
                 float randomDelay = Random.Range(4.5f, 10f);
                 Invoke("StopAnimations", randomDelay);
@@ -105,14 +107,14 @@ public class oui2 : MonoBehaviour
         }
         if (other.CompareTag("Monolithe"))
         {
-            // Récupère le script DeathColor du monolithe
+            // Rï¿½cupï¿½re le script DeathColor du monolithe
             DeathColor monolitheDeathColor = other.GetComponent<DeathColor>();
             if (monolitheDeathColor != null)
             {
-                // Passe la référence à ce script oui2 au monolithe
+                // Passe la rï¿½fï¿½rence ï¿½ ce script oui2 au monolithe
                 monolitheDeathColor.ballonScript = this;
 
-                // Assigne la référence à l'instance de DeathColor dans oui2
+                // Assigne la rï¿½fï¿½rence ï¿½ l'instance de DeathColor dans oui2
                 SetDeathColorInstance(monolitheDeathColor);
             }
 
@@ -121,21 +123,29 @@ public class oui2 : MonoBehaviour
 
     }
 
-    void StopAnimations()
+    public void Release() {
+        _isGrab = false;
+    }
+
+    public void Grab()
     {
-        // Arrête les tweens associés aux animations
+        _isGrab = true;
+    }
+    
+    public void StopAnimations() {
+        // Arrï¿½te les tweens associï¿½s aux animations
         emissionTween.Kill();
         colorTween.Kill();
         shakePositionTween.Kill();
         shakeRotationTween.Kill();
-        moveTween.Kill();
+        moveTween?.Kill();
 
-        // Active la gravité pour que le cube tombe
+        // Active la gravitï¿½ pour que le cube tombe
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.useGravity = true;
-
+            if(_isGrab) return;
             Invoke("Dela2", 3.49f);
             Destroy(gameObject, 3.5f);
         }
@@ -145,7 +155,7 @@ public class oui2 : MonoBehaviour
     {
          if (deathColorInstance != null)
         {
-            // Appeler la méthode AutomnColor de l'instance de DeathColor
+            // Appeler la mï¿½thode AutomnColor de l'instance de DeathColor
             deathColorInstance.AutomnColor();
         }
 
@@ -159,19 +169,19 @@ public class oui2 : MonoBehaviour
             // Instancier l'effet de particule
             GameObject particleEffectInstance = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
 
-            // Vérifier si l'effet de particule a été instancié
+            // Vï¿½rifier si l'effet de particule a ï¿½tï¿½ instanciï¿½
             if (particleEffectInstance != null)
             {
-                // Récupérer le renderer de l'effet de particule
+                // Rï¿½cupï¿½rer le renderer de l'effet de particule
                 Renderer particleRenderer = particleEffectInstance.GetComponent<Renderer>();
 
-                // Vérifier si l'effet de particule a un renderer
+                // Vï¿½rifier si l'effet de particule a un renderer
                 if (particleRenderer != null)
                 {
-                    // Convertir le code hexadécimal en couleur utilisable
+                    // Convertir le code hexadï¿½cimal en couleur utilisable
                     Color hexColor = HexToColor(DeathWish);
 
-                    // Appliquer la couleur à la propriété appropriée du matériau de l'effet de particule
+                    // Appliquer la couleur ï¿½ la propriï¿½tï¿½ appropriï¿½e du matï¿½riau de l'effet de particule
                     particleRenderer.material.SetColor("_BaseColor", hexColor);
                 }
             }

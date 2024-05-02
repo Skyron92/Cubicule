@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GradientSkyBox : MonoBehaviour
 {
-    public Color couleurDebut = Color.grey; // Couleur de départ du dégradé
-    public Color couleurFinale = Color.blue; // Couleur finale du dégradé
-    public float dureeChangement = 217f; // Durée du changement de couleur en secondes
+    public Color couleurDebut = Color.grey; // Couleur de dï¿½part du dï¿½gradï¿½
+    public Color couleurFinale = Color.blue; // Couleur finale du dï¿½gradï¿½
+    public float dureeChangement = 217f; // Durï¿½e du changement de couleur en secondes
 
     private float tempsEcoule = 0f;
     public bool canChangeColor = false;
@@ -18,26 +17,21 @@ public class GradientSkyBox : MonoBehaviour
 
     void Update()
     {
-        if (canChangeColor == true)
+        if (canChangeColor)
         {
-            // Calculer le ratio en utilisant la fonction f(x) = x^2 * 0.5, bornée entre 0 et 3.40
+            // Calculer le ratio en utilisant la fonction f(x) = x^2 * 0.5, bornï¿½e entre 0 et 3.40
             float ratio = Mathf.Clamp01(Mathf.Pow(tempsEcoule / dureeChangement, 2) * 0.5f * 3.40f);
 
-            // Appliquer la couleur en utilisant le ratio calculé
+            // Appliquer la couleur en utilisant le ratio calculï¿½
             RenderSettings.skybox.SetColor("_Tint", Color.Lerp(couleurDebut, couleurFinale, ratio));
 
             tempsEcoule += Time.deltaTime;
-
-            if (tempsEcoule >= dureeChangement)
-            {
-                tempsEcoule = 0f; // Réinitialiser le temps écoulé pour permettre une boucle continue du dégradé
-            }
         }
     }
 
     public void ActivateSkyChange()
     {
-        StartCoroutine(WaitForColorChange());//Méthode à appeler quand on veut lancer le changement de couyleur du ciel
+        StartCoroutine(WaitForColorChange());//Mï¿½thode ï¿½ appeler quand on veut lancer le changement de couyleur du ciel
     }
 
     IEnumerator WaitForColorChange()

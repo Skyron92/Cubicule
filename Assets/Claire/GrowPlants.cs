@@ -21,30 +21,20 @@ public class GrowPlants : MonoBehaviour
 
     public bool canGrowNext = false; //permet de savoir si j'ai un deuxi�me truc � faire grandir 
 
-    private void Start()
-    {
+    private void Start() {
         audioSource = GetComponent<AudioSource>();
-        if (canGrowNext != true)
-        {
+        if (canGrowNext != true) {
             GrowUp();
-            Debug.Log("J'ai lanc� la fonction !");
         }
         else GrowUp2();
-
-        
     }
 
-    private void GrowUp()
-    {
-
+    private void GrowUp() {
         premierObjet.transform.DOScale(croissanceAmount, Random.Range(tempsCroissanceMin, tempsCroissanceMax));
         Debug.Log(premierObjet.transform.lossyScale);
     }
 
-    private void GrowUp2()
-    {
-        Debug.Log("je suis"+ audioSource.gameObject);
-        Debug.Log("Je suis la deuxi�me animation");
+    private void GrowUp2() {
         premierObjet.transform.DOScale(croissanceAmount, Random.Range(tempsCroissanceMin, tempsCroissanceMax))
             .onComplete += () => {
             deuxiemeObjet.transform

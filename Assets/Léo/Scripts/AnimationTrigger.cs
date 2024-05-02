@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class AnimationTrigger : MonoBehaviour
     private MaterialPropertyBlock materialPropertyBlock;
     private bool enabled;
     private int _materialIndex;
+    
+    [SerializeField] private EventManager eventManager;
 
     private void Awake() {
         materialPropertyBlock = new MaterialPropertyBlock();
@@ -28,7 +31,10 @@ public class AnimationTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(!CollideByBottom(other) && !other.gameObject.CompareTag("Ground") ) return;
+        Material material = GetComponent<MeshRenderer>().material;
+        material.DOColor(new Color(1,0.8f,0,0), 10).onComplete += () => Destroy(gameObject);
         Ray ray = new Ray(transform.position, Vector3.down);
+        eventManager.StartAnimations();
         RaycastHit hit = new RaycastHit();
         if (!Physics.Raycast(ray, out hit)) return;
         _position = hit.textureCoord;
@@ -48,9 +54,9 @@ public class AnimationTrigger : MonoBehaviour
         if(meshRenderer == null) return;
         startTime = Time.time;
         transitionFactor += deltaInc;
-        transitionFactor = Mathf.Clamp(transitionFactor, 0, 50);
+        transitionFactor = Mathf.Clamp(transitionFactor, 0, 70);
         areaSize += deltaSizeInc;
-        areaSize = Mathf.Clamp(areaSize, 0, 20);
+        areaSize = Mathf.Clamp(areaSize, 0, 5);
         meshRenderer.GetPropertyBlock(materialPropertyBlock, _materialIndex);
         materialPropertyBlock.SetFloat("_transitionFactor", transitionFactor);
         materialPropertyBlock.SetFloat("_AreaSize", areaSize);

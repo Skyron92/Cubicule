@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -31,10 +32,14 @@ public class ButtonSoundSwitch : MonoBehaviour
 
     public void ButtonPressed()
     {
-        ActiveButton = true;
+        //ActiveButton = true;
+        foreach (var variableSound in Sounds)
+        {
+            variableSound.DOFade(0, 2);
+        }
     }
 
-    private void Update()
+   /* private void Update()
     {
 
         if (ActiveButton == true)
@@ -64,7 +69,7 @@ public class ButtonSoundSwitch : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }
     
 
