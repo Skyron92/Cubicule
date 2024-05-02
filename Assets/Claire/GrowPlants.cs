@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Unity.VisualScripting;
 
 public class GrowPlants : MonoBehaviour
 {
@@ -25,12 +23,15 @@ public class GrowPlants : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (canGrowNext != true)
         {
             GrowUp();
             Debug.Log("J'ai lanc� la fonction !");
         }
         else GrowUp2();
+
+        
     }
 
     private void GrowUp()

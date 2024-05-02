@@ -18,8 +18,6 @@ public class ButtonSoundSwitch : MonoBehaviour
     {
         citySoundSource = GameObject.FindGameObjectWithTag("CitySound");
         Sounds = citySoundSource.GetComponents<AudioSource>();
-        Debug.Log("je trouve : " + Sounds);
-
 
         initialVolumes = new float[Sounds.Length];
         for (int i = 0; i < Sounds.Length; i++)
@@ -28,9 +26,6 @@ public class ButtonSoundSwitch : MonoBehaviour
         }
 
         fadeTimer = 0f;
-
-
-
     }
 
 

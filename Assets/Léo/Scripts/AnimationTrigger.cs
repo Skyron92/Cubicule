@@ -1,6 +1,5 @@
 using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(SphereCollider))]
 public class AnimationTrigger : MonoBehaviour

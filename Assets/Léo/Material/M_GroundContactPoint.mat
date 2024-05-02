@@ -63,12 +63,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AreaSize: 0
+    - _AreaSize: 1.03
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 5000
     - _fresnelIntensity: 3.02
-    - _transitionFactor: 0
+    - _transitionFactor: 4
     m_Colors:
-    - _Position: {r: 0.1, g: 0, b: -1.77, a: 0}
+    - _Position: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
