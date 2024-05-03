@@ -11,9 +11,9 @@ public class EventManager : MonoBehaviour
     private bool hasStarted;
     public ChangeBuilding StartAnimations2;
 
-    [SerializeField] private GameObject forest, lac, animals, balloonSpawner, misc, building;
+    [SerializeField] private GameObject forest, lac, balloonSpawner, misc, building;
     [SerializeField] private Image fadeImage;
-    [SerializeField, Range(0,5)] private float forestTime, lacTime, animalsTime, balloonTime, miscTime;
+    [SerializeField, Range(0,5)] private float forestTime, lacTime, balloonTime, miscTime;
     private float maxTime;
     private AudioSource _audioSource;
 
@@ -30,7 +30,6 @@ public class EventManager : MonoBehaviour
         if (time >= GetTimeInSecond(lacTime) && !lac.activeSelf) lac.SetActive(true);
         if (time >= GetTimeInSecond(miscTime) && !misc.activeSelf) misc.SetActive(true);
         if (time >= GetTimeInSecond(balloonTime) && !balloonSpawner.activeSelf) balloonSpawner.SetActive(true);
-       // if (time >= GetTimeInSecond(animalsTime) && !animals.activeSelf) animals.SetActive(true);
        if (time >= maxTime) {
            time = 0;
            fadeImage.DOFade(1, 2).onComplete += () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
