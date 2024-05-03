@@ -9,7 +9,7 @@ public class CubeSpawner : MonoBehaviour
 
     void Start()
     {
-        Invoke("BonjourCoroutine",5);
+        Invoke("BonjourCoroutine",1);
     }
 
     void BonjourCoroutine()
