@@ -5,18 +5,22 @@ public class CubeSpawner : MonoBehaviour
 {
     public GameObject cubePrefab; // Prefab du cube à spawn
     public Vector3 mapSize = new Vector3(120f, 10f, 120f); // Taille de la carte
+    private bool BaBalloon = false;
 
     void Start()
     {
-        // Lancer la coroutine pour faire spawn les cubes
-        StartCoroutine(SpawnCubesRoutine());
+        Invoke("BonjourCoroutine",5);
     }
 
+    void BonjourCoroutine()
+    {
+        StartCoroutine(SpawnCubesRoutine());
+    }
     IEnumerator SpawnCubesRoutine()
     {
         while (true)
         {
-            yield return new WaitForSeconds(2.5f); // Attendre 5 secondes
+            yield return new WaitForSeconds(1.5f); // Attendre 5 secondes
 
             SpawnCubeRandomPosition();
         }

@@ -15,10 +15,9 @@ public class ChangeBuilding : MonoBehaviour
     {
         cubeRenderer = GetComponent<Renderer>();
         cubeMaterial = cubeRenderer.material;
-        StartAnimations2();
     }
 
-    void StartAnimations2()
+    public void StartAnimations2()
     {
         string[] hexColors = new string[]
         {

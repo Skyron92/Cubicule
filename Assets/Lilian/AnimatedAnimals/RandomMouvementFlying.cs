@@ -11,7 +11,6 @@ public class RandomNavMeshMovement : MonoBehaviour
 
     private NavMeshAgent agent;
     private Vector3 randomDestination;
-    private bool BaBalloon = false;
     bool hasReachedDestination => Vector3.Distance(transform.position, randomDestination) < 0.1f;
 
     void Start()
@@ -23,19 +22,15 @@ public class RandomNavMeshMovement : MonoBehaviour
     // Fonction pour démarrer après le délai
     void DelayedStart()
     {
-        BaBalloon = true;
         SetRandomDestination();
     }
 
     void Update()
     {
-        if (BaBalloon == true)
-        {    // If the agent has reached the random destination, set a new one
             if (!agent.pathPending && agent.remainingDistance < 0.1f)
             {
                 SetRandomDestination();
             }
-        }
     }
 
     void SetRandomDestination()
