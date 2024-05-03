@@ -67,8 +67,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 5000
-    - _fresnelIntensity: 20.73
-    - _transitionFactor: 0
+    - _fresnelIntensity: 79.84
+    - _transitionFactor: 5
     m_Colors:
     - _Position: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
