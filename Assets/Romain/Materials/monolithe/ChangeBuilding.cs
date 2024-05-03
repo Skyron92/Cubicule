@@ -33,7 +33,7 @@ public class ChangeBuilding : MonoBehaviour
 
         string randomHexColor = hexColors[Random.Range(0, hexColors.Length)];
 
-        colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 300f);
+        colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 220f);
     }
 
     Color HexToColor(string hex)
