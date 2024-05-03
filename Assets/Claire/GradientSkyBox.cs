@@ -13,6 +13,7 @@ public class GradientSkyBox : MonoBehaviour
     private void Start()
     {
         RenderSettings.skybox.SetColor("_Tint", couleurDebut);
+
         gameObject.SetActive(false);
     }
 
