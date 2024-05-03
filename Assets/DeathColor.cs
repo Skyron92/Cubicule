@@ -22,7 +22,8 @@ public class DeathColor : MonoBehaviour
         cubeMaterial = cubeRenderer.sharedMaterial;
 
         // Définit la couleur du matériau en gris
-        cubeMaterial.color = Color.gray;
+        cubeMaterial.color = Color.grey;
+        cubeMaterial.color = HexToColor("#2B2B2C");
     }
     public void AutomnColor()
     {

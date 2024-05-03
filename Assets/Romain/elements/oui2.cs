@@ -36,7 +36,6 @@ public class oui2 : MonoBehaviour
 
     void StartAnimations()
     {
-        // Tableau des codes hexad�cimaux des couleurs possibles
         string[] hexColors = new string[]
         {
         "#FF602D",
@@ -48,25 +47,20 @@ public class oui2 : MonoBehaviour
         "#960018"
         };
 
-        // Choisir al�atoirement un code hexad�cimal parmi le tableau
         string randomHexColor = hexColors[Random.Range(0, hexColors.Length)];
 
-        // Animation de clignotement de l'�mission avec la couleur al�atoire
         emissionTween = DOTween.To(() => cubeMaterial.GetColor("_EmissionColor"), color => cubeMaterial.SetColor("_EmissionColor", color), HexToColor(randomHexColor), 30f)
            .SetEase(Ease.InOutQuad)
            .SetLoops(-1, LoopType.Yoyo);
 
-        // Animation de changement de couleur du cube avec la couleur al�atoire
         colorTween = cubeRenderer.material.DOColor(HexToColor(randomHexColor), 30f);
         DeathWish = randomHexColor;
 
-        // Le reste de tes animations reste inchang�
         shakePositionTween = transform.DOShakePosition(30f, 1f, 15);
         shakeRotationTween = transform.DOShakeRotation(30f, 15f, 15);
 
-        float randomMoveDuration = Random.Range(20f, 40f);
+        float randomMoveDuration = Random.Range(40f, 60f);
 
-        // Animation de d�placement du cube vers le centre de la carte avec la dur�e al�atoire
         moveTween = transform.DOMove(centerOfMap, randomMoveDuration);
     }
 
@@ -107,14 +101,11 @@ public class oui2 : MonoBehaviour
         }
         if (other.CompareTag("Monolithe"))
         {
-            // R�cup�re le script DeathColor du monolithe
             DeathColor monolitheDeathColor = other.GetComponent<DeathColor>();
             if (monolitheDeathColor != null)
             {
-                // Passe la r�f�rence � ce script oui2 au monolithe
                 monolitheDeathColor.ballonScript = this;
 
-                // Assigne la r�f�rence � l'instance de DeathColor dans oui2
                 SetDeathColorInstance(monolitheDeathColor);
             }
 
@@ -133,14 +124,12 @@ public class oui2 : MonoBehaviour
     }
     
     public void StopAnimations() {
-        // Arr�te les tweens associ�s aux animations
         emissionTween.Kill();
         colorTween.Kill();
         shakePositionTween.Kill();
         shakeRotationTween.Kill();
         moveTween?.Kill();
 
-        // Active la gravit� pour que le cube tombe
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -155,7 +144,6 @@ public class oui2 : MonoBehaviour
     {
          if (deathColorInstance != null)
         {
-            // Appeler la m�thode AutomnColor de l'instance de DeathColor
             deathColorInstance.AutomnColor();
         }
 
@@ -169,19 +157,14 @@ public class oui2 : MonoBehaviour
             // Instancier l'effet de particule
             GameObject particleEffectInstance = Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
 
-            // V�rifier si l'effet de particule a �t� instanci�
             if (particleEffectInstance != null)
             {
-                // R�cup�rer le renderer de l'effet de particule
                 Renderer particleRenderer = particleEffectInstance.GetComponent<Renderer>();
 
-                // V�rifier si l'effet de particule a un renderer
                 if (particleRenderer != null)
                 {
-                    // Convertir le code hexad�cimal en couleur utilisable
                     Color hexColor = HexToColor(DeathWish);
 
-                    // Appliquer la couleur � la propri�t� appropri�e du mat�riau de l'effet de particule
                     particleRenderer.material.SetColor("_BaseColor", hexColor);
                 }
             }

@@ -166,5 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target1: {fileID: 0}
   target2: {fileID: 0}
-  duration1: 10
-  duration2: 5
+  duration1: 15
+  duration2: 7
