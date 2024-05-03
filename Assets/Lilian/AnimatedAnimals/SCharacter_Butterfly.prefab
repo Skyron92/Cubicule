@@ -263,10 +263,10 @@ GameObject:
   - component: {fileID: 95951106970005182}
   - component: {fileID: 1617025551204606326}
   - component: {fileID: 7478986986863462748}
-  - component: {fileID: 3380519463680928558}
   - component: {fileID: 766474533430444272}
   - component: {fileID: -2902583609905505173}
   - component: {fileID: -7436721853749886673}
+  - component: {fileID: 98902151917920311}
   m_Layer: 0
   m_Name: SCharacter_Butterfly
   m_TagString: Untagged
@@ -321,7 +321,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -347,18 +347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneCenter: {x: 0, y: 0, z: 0}
   zoneRadius: 40
---- !u!114 &3380519463680928558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556525557937860}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6290c1639df35ec4ea29ff0206a26a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &766474533430444272
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -640,6 +628,27 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!135 &98902151917920311
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556525557937860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 7.92, z: 0}
 --- !u!1 &1556607663250786
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,18 +10,18 @@ public class DeathColor : MonoBehaviour
     Collider objectCollider; // Ajout d'une variable pour le collider
 
 
-    // Ajoute une référence au script oui2
+    // Ajoute une rÃ©fÃ©rence au script oui2
     public oui2 ballonScript;
     public oui2 HexC;
 
     void Start()
     {
-        // Récupère le composant Renderer attaché à cet objet
+        // RÃ©cupÃ¨re le composant Renderer attachÃ© Ã  cet objet
         cubeRenderer = GetComponent<Renderer>();
-        // Récupère le composant Material du Renderer
+        // RÃ©cupÃ¨re le composant Material du Renderer
         cubeMaterial = cubeRenderer.sharedMaterial;
 
-        // Définit la couleur du matériau en gris
+        // DÃ©finit la couleur du matÃ©riau en gris
         cubeMaterial.color = Color.grey;
         cubeMaterial.color = HexToColor("#2B2B2C");
     }
@@ -32,17 +32,17 @@ public class DeathColor : MonoBehaviour
 
         Debug.Log(ballonScript);
         Debug.Log(ballonScript.DeathWish);
-        // Utilise la référence au script oui2 pour récupérer la couleur du ballon
+        // Utilise la rÃ©fÃ©rence au script oui2 pour rÃ©cupÃ©rer la couleur du ballon
         colorTween = cubeRenderer.sharedMaterial.DOColor(HexToColor(ballonScript.DeathWish), 4f);
 
-        // Lancer le script SpawnAnimaux après un délai de 4 secondes
+        // Lancer le script SpawnAnimaux aprÃ¨s un dÃ©lai de 4 secondes
         Invoke("SpawnAnimalsAfterDelay", 0.5f);
     }
 
     void SpawnAnimalsAfterDelay()
     {
-        // Trouve le composant SpawnAnimaux et appelle sa méthode Start pour lancer le spawn des animaux
-        FindObjectOfType<SpawnAnimaux>().Start();
+        // Trouve le composant SpawnAnimaux et appelle sa mÃ©thode Start pour lancer le spawn des animaux
+        FindObjectOfType<SpawnAnimaux>().Spawn();
     }
     Color HexToColor(string hex)
     {
