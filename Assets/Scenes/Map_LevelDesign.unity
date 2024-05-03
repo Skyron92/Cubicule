@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019247083, g: 0.018670019, b: 0.018065082, a: 1}
+  m_IndirectSpecularColor: {r: 0.019235553, g: 0.0186638, b: 0.01804623, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &13003506
 Transform:
   m_ObjectHideFlags: 0
@@ -2106,8 +2106,8 @@ MonoBehaviour:
   misc: {fileID: 2049081124}
   building: {fileID: 889094384}
   firefly: {fileID: 660796133}
-  firefly2: {fileID: 0}
-  firefly3: {fileID: 0}
+  firefly2: {fileID: 1238631214}
+  firefly3: {fileID: 13003505}
   fire: {fileID: 688149475}
   fadeImage: {fileID: 1784110299}
   forestTime: 0.3
@@ -2115,8 +2115,8 @@ MonoBehaviour:
   balloonTime: 0.15
   miscTime: 0.1
   fireflyTime: 0.3
-  firefly2Time: 0
-  firefly3Time: 0
+  firefly2Time: 0.6
+  firefly3Time: 0.9
   fireTime: 0.4
 --- !u!4 &148342358
 Transform:
@@ -8526,7 +8526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &586955447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9456,7 +9456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &660796134
 Transform:
   m_ObjectHideFlags: 0
@@ -18052,7 +18052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1238631215
 Transform:
   m_ObjectHideFlags: 0
