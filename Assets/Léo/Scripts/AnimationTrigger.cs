@@ -32,6 +32,7 @@ public class AnimationTrigger : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if(!CollideByBottom(other) && !other.gameObject.CompareTag("Ground") ) return;
         Material material = GetComponent<MeshRenderer>().material;
+        material.SetFloat("_SpecGlossMap", 0);
         material.DOColor(new Color(1,0.8f,0,0), 10).onComplete += () => Destroy(gameObject);
         Ray ray = new Ray(transform.position, Vector3.down);
         eventManager.StartAnimations();
