@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8844484260093150257}
   - component: {fileID: 2062598948515349421}
   - component: {fileID: 6714453930218851486}
+  - component: {fileID: 5782901443645563560}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -588,8 +589,8 @@ MonoBehaviour:
   m_SetLineColorGradient: 1
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.5235849, g: 0.9290047, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -597,7 +598,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
+    ctime1: 33635
     ctime2: 0
     ctime3: 0
     ctime4: 0
@@ -613,13 +614,13 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -643,7 +644,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_BlockedColorGradient:
@@ -701,6 +702,23 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &5782901443645563560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611969676864351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c4b63497e14fb69c07fe82b4457b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butterfly: {fileID: 8953015117574331164}
+  butterflyPrefab: {fileID: 1556525557937860, guid: 18b8af6b3106d4940a5e534dc18c0344,
+    type: 3}
+  gripInputActionReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &228227154523394630
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +833,7 @@ GameObject:
   - component: {fileID: 7014821805261637736}
   - component: {fileID: 9058817679695007211}
   - component: {fileID: 3994739390285131585}
+  - component: {fileID: 1328899685539385686}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -1388,8 +1407,8 @@ MonoBehaviour:
   m_SetLineColorGradient: 1
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.5235849, g: 0.9290047, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1397,7 +1416,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
+    ctime1: 33635
     ctime2: 0
     ctime3: 0
     ctime4: 0
@@ -1413,13 +1432,13 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1443,7 +1462,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_BlockedColorGradient:
@@ -1501,6 +1520,23 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &1328899685539385686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672556504022186157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c4b63497e14fb69c07fe82b4457b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butterfly: {fileID: 621022815957566899}
+  butterflyPrefab: {fileID: 1556525557937860, guid: 18b8af6b3106d4940a5e534dc18c0344,
+    type: 3}
+  gripInputActionReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &8114831709243536645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,6 +1864,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5694990251559298157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &621022815957566899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5158586951062872542, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+    type: 3}
+  m_PrefabInstance: {fileID: 5694990251559298157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8715551706154197244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1905,6 +1947,12 @@ Transform:
 --- !u!95 &8752488962205768535 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 109434732388006827, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8715551706154197244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8953015117574331164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 345831359335807968, guid: 65847589f926b734d9eaed6e25f0046b,
     type: 3}
   m_PrefabInstance: {fileID: 8715551706154197244}
   m_PrefabAsset: {fileID: 0}
