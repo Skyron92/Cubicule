@@ -11,6 +11,7 @@ TagManager:
   - FlyAnimal
   - Monolithe
   - Baton
+  - Ballon
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1492195693605625195}
   m_Layer: 0
   m_Name: BallonFlot
-  m_TagString: Untagged
+  m_TagString: Ballon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2445601126459450895}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 88049ba1b59890849a1084497d2494b5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

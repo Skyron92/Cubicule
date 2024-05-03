@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8844484260093150257}
   - component: {fileID: 2062598948515349421}
   - component: {fileID: 6714453930218851486}
+  - component: {fileID: 1032112235066430846}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -51,9 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8752488962205768535}
-  iarGrabRef: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
+  iarGrabRef: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  iarTriggerRef: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
+  iarTriggerRef: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
 --- !u!114 &3438661986468926816
 MonoBehaviour:
@@ -701,6 +702,20 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &1032112235066430846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611969676864351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b561f6bdcfa0f741b06831b42977400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityInputActionReference: {fileID: 7400710395930650107, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &228227154523394630
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +830,7 @@ GameObject:
   - component: {fileID: 7014821805261637736}
   - component: {fileID: 9058817679695007211}
   - component: {fileID: 3994739390285131585}
+  - component: {fileID: 6256226758248899042}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -1501,6 +1517,20 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &6256226758248899042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672556504022186157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b561f6bdcfa0f741b06831b42977400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityInputActionReference: {fileID: -8591080908870397156, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &8114831709243536645
 GameObject:
   m_ObjectHideFlags: 0
