@@ -20,7 +20,7 @@ public class CubeSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.5f); // Attendre 5 secondes
+            yield return new WaitForSeconds(0.8f); // Attendre 5 secondes
 
             SpawnCubeRandomPosition();
         }
