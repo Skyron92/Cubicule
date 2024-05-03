@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02500216, g: 0.03147991, b: 0.03532164, a: 1}
+  m_IndirectSpecularColor: {r: 0.019235553, g: 0.0186638, b: 0.01804623, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1833,8 +1833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1bb7eacc561544d8352e4c99fc9622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartAnimations2: {fileID: 8150838269021569257, guid: 630f7b68f6a8a7b4ab45225d1838296f,
-    type: 3}
   forest: {fileID: 781834542}
   lac: {fileID: 1492859673}
   balloonSpawner: {fileID: 775851693}

@@ -15,6 +15,7 @@ public class ChangeBuilding : MonoBehaviour
     {
         cubeRenderer = GetComponent<Renderer>();
         cubeMaterial = cubeRenderer.material;
+        EventManager.current.AnimationStarted += (sender, args) => StartAnimations2();
     }
 
     public void StartAnimations2()

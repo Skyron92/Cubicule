@@ -9,7 +9,6 @@ public class EventManager : MonoBehaviour
 
     private float time;
     private bool hasStarted;
-    public ChangeBuilding StartAnimations2;
 
     [SerializeField] private GameObject forest, lac, balloonSpawner, misc, building;
     [SerializeField] private Image fadeImage;
@@ -17,10 +16,17 @@ public class EventManager : MonoBehaviour
     private float maxTime;
     private AudioSource _audioSource;
 
+    public static EventManager current;
+
+    public event EventHandler AnimationStarted;
+
+    private void Awake() {
+        current = this;
+    }
+
     private void Start() {
         _audioSource = GetComponent<AudioSource>();
         maxTime = _audioSource.clip.length;
-        StartAnimations2.StartAnimations2();
     }
 
     // Update is called once per frame
@@ -39,6 +45,7 @@ public class EventManager : MonoBehaviour
     public void StartAnimations() {
         time = 0;
         hasStarted = true;
+        AnimationStarted?.Invoke(this, EventArgs.Empty);
     }
 
     private float GetTimeInSecond(float minute) {
