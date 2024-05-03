@@ -16,7 +16,8 @@ public class RandomNavMeshMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        Invoke("DelayedStart", 10f); // Appeler la fonction DelayedStart après un délai de 10 secondes
+        Invoke("DelayedStart", 4f); // Appeler la fonction DelayedStart après un délai de 10 secondes
+        Invoke("Delai", 65);
     }
 
     // Fonction pour démarrer après le délai
@@ -58,5 +59,9 @@ public class RandomNavMeshMovement : MonoBehaviour
         UpdateZoneCalcul();
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(zoneCenter, zoneRadius);
+    }
+    void Delai()
+    {
+        Destroy(gameObject);
     }
 }
