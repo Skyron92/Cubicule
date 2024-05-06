@@ -10,9 +10,11 @@ public class EventManager : MonoBehaviour
     private float time;
     private bool hasStarted;
 
-    [SerializeField] private GameObject forest, lac, balloonSpawner, misc, building, firefly, firefly2, firefly3, fire;
+    [SerializeField] private GameObject forest, lac, balloonSpawner, misc, building, firefly, firefly2, firefly3; //fire;
     [SerializeField] private Image fadeImage;
-    [SerializeField, Range(0,5)] private float forestTime, lacTime, balloonTime, miscTime, fireflyTime, firefly2Time, firefly3Time, fireTime;
+
+    [SerializeField, Range(0, 5)]
+    private float forestTime, lacTime, balloonTime, miscTime, fireflyTime, firefly2Time, firefly3Time;// fireTime;
     private float maxTime;
     private AudioSource _audioSource;
 
@@ -39,7 +41,7 @@ public class EventManager : MonoBehaviour
         if (time >= GetTimeInSecond(fireflyTime) && !firefly.activeSelf) firefly.SetActive(true);
         if (time >= GetTimeInSecond(firefly2Time) && !firefly2.activeSelf) firefly2.SetActive(true);
         if (time >= GetTimeInSecond(firefly3Time) && !firefly3.activeSelf) firefly3.SetActive(true);
-        if (time >= GetTimeInSecond(fireTime) && !fire.activeSelf) fire.SetActive(true);
+      //  if (time >= GetTimeInSecond(fireTime) && !fire.activeSelf) fire.SetActive(true);
         if (time >= maxTime) {
            time = 0;
            fadeImage.DOFade(1, 2).onComplete += () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
